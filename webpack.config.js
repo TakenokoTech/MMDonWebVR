@@ -4,7 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const reactSetting = {
     entry: { bundle: './src/jsx/app.jsx' },
     output: {
-        path: path.join(__dirname, 'public/js/'),
+        //path: path.join(__dirname, 'public/js/'),
         filename: '[name].js'
     },
     module: {
@@ -27,7 +27,7 @@ const reactSetting = {
 const sassSetting = {
     entry: { style: './src/sass/index.scss' },
     output: {
-        path:  path.join(__dirname, 'public/css/'),
+        //path:  path.join(__dirname, 'public/css/'),
         filename: '[name].css'
     },
     module: {
@@ -43,17 +43,4 @@ const sassSetting = {
     ]
 }
 
-const bundleSetting = {
-    entry: {
-        html: "./src/index.html",
-    },
-    output: {
-        path: path.join(__dirname, "public/"),
-        filename: "bundle.js"
-    },
-    module: {
-        loaders: [{ test: /\.html$/, loader: "file-loader?name=[name].[ext]" },]
-    }
-}
-
-module.exports = [reactSetting, sassSetting, bundleSetting];
+module.exports = [reactSetting, sassSetting];
