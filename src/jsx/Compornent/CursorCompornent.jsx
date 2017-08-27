@@ -4,8 +4,8 @@ import {flatteningObj, Vector3} from '../Utils/Util.jsx';
 
 export default class CursorCompornent extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 

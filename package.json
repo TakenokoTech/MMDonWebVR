@@ -24,6 +24,8 @@
     "a-mmd": "^1.0.2",
     "aframe-physics-components": "^1.1.0",
     "aframe-physics-system": "^2.0.0",
+    "ammo-node": "^1.0.0",
+    "ammo.js": "0.0.10",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",

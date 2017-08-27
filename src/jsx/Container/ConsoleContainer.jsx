@@ -5,21 +5,30 @@ import {Vector3} from '../Utils/Util.jsx';
 export default class ConsoleContainer extends Component {
 
     get defaultState() {
-        return {}
+        return {
+            logText: ""
+        }
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = this.defaultState;
+        this.addLog = this.addLog.bind(this);
     }
 
     componentDidMount() {
         console.log("componentDidMount to ConsoleContainer");
     }
 
+    addLog(text) {
+        console.log("addLog to ConsoleContainer");
+        this.setState({ logText: ( text + "\n" + this.state.logText ) });
+    }
+
     render() {
+        console.log("render to ConsoleContainer");
         const text = {
-            value: this.props.logText,
+            value: this.state.logText,
             align: 'left'
         };
         const design = {

@@ -8,8 +8,8 @@ export default class SphereCompornent extends Component {
         return {}
     }
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {};
     }
 
