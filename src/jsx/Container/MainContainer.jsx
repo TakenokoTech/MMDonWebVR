@@ -1,16 +1,16 @@
 import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
 import SceneContainer from './SceneContainer.jsx'
-import {BoxCompornent, CursorCompornent} from '../Compornent/index.jsx';
-import model from '../Model/SceneModel.jsx';
+import ConsoleContainer from './ConsoleContainer.jsx'
+import {BoxCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent} from '../Compornent/index.jsx';
 
 export default class MainContainer extends Component {
 
     get defaultState() {
-        return { scenePatern: 0 }
+        return {}
     }
 
-    constructor() {
+    constructor(props) {
         super();
         this.state = this.defaultState;
         this.handleClick = this.handleClick.bind(this);
@@ -21,22 +21,23 @@ export default class MainContainer extends Component {
     }
 
     handleClick(e) {
-        console.log("handleClick to MainContainer " + this.state.scenePatern);
-        this.setState({scenePatern: (this.state.scenePatern + 1) % 2 });
+        console.log("handleClick to MainContainer");
+        this.refs.consoleContainer.addLog("SCENE CHANGE");
+        this.refs.sceneContainer.changeScene(e);
     }
 
     render() {
-        const sceneParam = {
-            planeUrl: model.scene[this.state.scenePatern]['planeUrl'],
-            skyUrl: model.scene[this.state.scenePatern]['skyUrl']
-        };
+        console.log("render to MainContainer");
         return (
-            <SceneContainer {...sceneParam} >
+            <Scene id="scene" physics="debug: true">
+                <SceneContainer ref="sceneContainer" />
                 <BoxCompornent click={this.handleClick} />
-                <Entity particle-system={{preset: 'snow'}}/>
-                <Entity text={{value: 'DEMO MMDonWebVR!! \n developer tool: [ctrl+alt+I]', align: 'center'}} position={{x: 0, y: 2, z: -1}}/>
+                <TextCompornent />
+                <MmdCompornent />
+                <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
+                <SphereCompornent />
                 <CursorCompornent />
-            </SceneContainer>
+            </Scene>
         );
     }
 }

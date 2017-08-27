@@ -1,6 +1,19 @@
+import lodash from 'lodash';
 
-export default class Util {
-
+/** */
+function Vector3(x, y ,z) {
+    return [x, y, z].join(' ');
 }
 
-export const Vector3 = (x, y ,z) => [x, y, z].join(' ');
+/** */
+function flatteningObj(obj, str = "") {
+    _.each(obj, (v, k) => {
+        str += (k + ":" + v + "; ");
+    });
+    return str;
+}
+
+export {
+    Vector3,
+    flatteningObj
+};

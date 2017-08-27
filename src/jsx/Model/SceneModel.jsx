@@ -7,7 +7,7 @@ class SceneModel {
                 planeUrl: "https://cdn.aframe.io/a-painter/images/floor.jpg"
             },
             {
-                skyUrl: "./img/background.jpg",
+                skyUrl: "./images/background.jpg",
                 planeUrl: null
             }
         ];
