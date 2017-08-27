@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
+import {Vector3} from '../Utils/Util.jsx';
 
 export default class BoxCompornent extends Component {
 
@@ -13,15 +14,15 @@ export default class BoxCompornent extends Component {
     }
 
     componentDidMount() {
-        console.log("BoxCompornent to SceneContainer");
+        console.log("componentDidMount to BoxCompornent");
         this.setState(this.defaultState);
     }
 
     render() {
-        const Vector3 = (x, y ,z) => [x, y, z].join(' ');
+        const id = 'box-' + (this.props.id || "");
         const design = {
             material: {color: 'red'},
-            position: {x: 0, y: 1, z: -5},
+            position: {x: 0, y: 1.6, z: -5},
             rotation: Vector3(-45,-45,-45)
         }
         const animation = {
@@ -32,7 +33,7 @@ export default class BoxCompornent extends Component {
             click: this.props.click
         };
         return (
-            <Entity geometry={{primitive: 'box'}} {...design} {...animation} events={events} />
+            <Entity id={id} geometry={{primitive: 'box'}} {...design} {...animation} events={events} />
         );
     }
 }
