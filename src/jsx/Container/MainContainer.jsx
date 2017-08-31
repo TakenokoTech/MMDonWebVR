@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
+import AssetsContainer from './AssetsContainer.jsx'
 import SceneContainer from './SceneContainer.jsx'
 import ConsoleContainer from './ConsoleContainer.jsx'
 import StageContainer from './StageContainer.jsx'
@@ -31,16 +32,16 @@ export default class MainContainer extends Component {
         console.log("render to MainContainer");
         return (
             <Scene id="scene" physics="debug: true" stats>
+                <AssetsContainer />
                 <SceneContainer ref="sceneContainer" />
                 <BoxCompornent click={this.handleClick} />
                 <SphereCompornent />
                 <TextCompornent />
                 <MmdCompornent />
-                <StageContainer />
                 <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
                 <CursorCompornent />
-                <Entity mtl-model={{src: '../images/bowling/bowling.mtl'}} />
-                <Entity obj-model={{src: '../images/bowling/bowling.obj'}} />
+                
+                <StageContainer />
             </Scene>
         );
     }

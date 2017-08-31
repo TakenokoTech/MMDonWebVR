@@ -42,7 +42,7 @@ export default class CursorCompornent extends Component {
             }
         }
         return (
-            <Entity id='camera' ref='cam' primitive='a-camera' look-controls >
+            <Entity id='camera' ref='cam' primitive='a-camera' position="0 5 5" look-controls >
                     <Entity id='cursor' primitive='a-cursor' {...cursorDesign} {...cursorAnimation} />
             </Entity>
         );
