@@ -34,10 +34,10 @@ export default class MmdCompornent extends Component {
             mass:100,
             linearDamping: 0.01,
             angularDamping: 0.0001
-        };//dynamic-body={flatteningObj(dynamic)}
+        };
         return (
-            <Entity id={mmdId} {...design} mmd={flatteningObj(soundSource)}  >
-                <Entity id={modelId} mmd-model={flatteningObj(model)} />
+            <Entity id={mmdId} {...design} mmd={flatteningObj(soundSource)}>
+                <Entity id={modelId} mmd-model={flatteningObj(model)}/>
             </Entity>
         );
     }

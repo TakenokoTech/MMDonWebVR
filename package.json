@@ -22,10 +22,13 @@
   "homepage": "https://github.com/nokotech/MMDonWebVR#readme",
   "devDependencies": {
     "a-mmd": "^1.0.2",
+    "aframe": "^0.6.1",
+    "aframe-animation-component": "^3.2.5",
+    "aframe-particle-system-component": "^1.0.10",
+    "aframe-react": "^4.3.0",
     "aframe-physics-components": "^1.1.0",
     "aframe-physics-system": "^2.0.0",
     "ammo-node": "^1.0.0",
-    "ammo.js": "0.0.10",
     "autoprefixer": "^7.1.2",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -48,16 +51,10 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "sugarss": "^1.0.0",
-    "webpack": "^3.5.5"
+    "webpack": "^3.5.5",
+    "webpack-stream": "^4.0.0"
   },
   "dependencies": {
-    "aframe": "^0.6.1",
-    "aframe-animation-component": "^3.2.5",
-    "aframe-particle-system-component": "^1.0.10",
-    "aframe-react": "^4.3.0",
-    "gulp": "^3.9.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "webpack-stream": "^4.0.0"
+    "gulp": "^3.9.1"
   }
 }

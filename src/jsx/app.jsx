@@ -1,4 +1,4 @@
-import 'ammo-node';
+// import 'ammo-node';
 import 'aframe';
 import 'aframe-animation-component';
 import 'aframe-physics-components';

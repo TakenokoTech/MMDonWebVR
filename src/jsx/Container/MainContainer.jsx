@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
 import SceneContainer from './SceneContainer.jsx'
 import ConsoleContainer from './ConsoleContainer.jsx'
+import StageContainer from './StageContainer.jsx'
 import {BoxCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent} from '../Compornent/index.jsx';
 
 export default class MainContainer extends Component {
@@ -32,10 +33,11 @@ export default class MainContainer extends Component {
             <Scene id="scene" physics="debug: true">
                 <SceneContainer ref="sceneContainer" />
                 <BoxCompornent click={this.handleClick} />
+                <SphereCompornent />
                 <TextCompornent />
                 <MmdCompornent />
+                <StageContainer />
                 <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
-                <SphereCompornent />
                 <CursorCompornent />
             </Scene>
         );

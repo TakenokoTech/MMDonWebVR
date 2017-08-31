@@ -44,7 +44,7 @@ export default class SceneContainer extends Component {
                 <Entity id="light" light={{type: 'directional'}} {...lightDesign} />
                 <Entity id='particle' particle-system={{preset: 'snow'}}/>
                 {atmosphere}
-                <Entity id="grand" static-body geometry={{primitive: 'box'}} scale={{x: 100, y: 0.01, z: 100}} material={{color: 'blue', opacity: 0}} />
+                <Entity id="grand" geometry={{primitive: 'box'}} static-body scale={{x: 100, y: 1, z: 100}} position={{x: 0, y: -1, z: 0}} material={{color: 'red', opacity: 0}} />
             </Entity>
         );
     }
