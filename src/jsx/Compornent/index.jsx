@@ -3,6 +3,7 @@ import SphereCompornent from "./SphereCompornent.jsx";
 import TextCompornent from "./TextCompornent.jsx";
 import CursorCompornent from "./CursorCompornent.jsx";
 import MmdCompornent from "./MmdCompornent";
+import ObjCompornent from "./ObjCompornent";
 
 export {
     BoxCompornent,
@@ -10,4 +11,5 @@ export {
     TextCompornent,
     CursorCompornent,
     MmdCompornent,
+    ObjCompornent,
 };
