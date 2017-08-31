@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
 import SceneContainer from './SceneContainer.jsx'
 import ConsoleContainer from './ConsoleContainer.jsx'
-import {BoxCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent} from '../Compornent/index.jsx';
+import {BoxCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent, ObjCompornent} from '../Compornent/index.jsx';
 
 export default class MainContainer extends Component {
 
@@ -29,7 +29,7 @@ export default class MainContainer extends Component {
     render() {
         console.log("render to MainContainer");
         return (
-            <Scene id="scene" physics="debug: true">
+            <Scene id="scene" physics="debug: true" stats>
                 <SceneContainer ref="sceneContainer" />
                 <BoxCompornent click={this.handleClick} />
                 <TextCompornent />
@@ -37,6 +37,8 @@ export default class MainContainer extends Component {
                 <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
                 <SphereCompornent />
                 <CursorCompornent />
+                <Entity mtl-model={{src: '../images/bowling/bowling.mtl'}} />
+                <Entity obj-model={{src: '../images/bowling/bowling.obj'}} />
             </Scene>
         );
     }
