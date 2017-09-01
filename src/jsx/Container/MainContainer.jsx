@@ -20,6 +20,15 @@ export default class MainContainer extends Component {
 
     componentDidMount() {
         console.log("componentDidMount to MainContainer");
+        let i = 0;
+        setInterval(() => {
+            const rot = this.refs.cursorCompornent.getRotation();
+            const rad = 1 - Math.cos(rot.y * (Math.PI / 180));
+            if( i++ % 1000 ) console.log();
+            this.refs.cursorCompornent.moveCamera( -rad*0.01, 0, -0.01)
+            //this.refs.ObjCompornent.moveRotation( 0, -rot.x/10, 0 )
+            this.refs.ObjCompornent.movePosition( -rad*0.01, 0, -0.01)
+        }, 100);
     }
 
     handleClick(e) {
@@ -39,9 +48,9 @@ export default class MainContainer extends Component {
                 <TextCompornent />
                 <MmdCompornent />
                 <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
-                <CursorCompornent />
-                
-                <StageContainer />
+                <CursorCompornent ref="cursorCompornent" position={this.state.position} />
+                <ObjCompornent ref="ObjCompornent" />
+                {/* <StageContainer /> */}
             </Scene>
         );
     }

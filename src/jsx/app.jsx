@@ -5,6 +5,7 @@ import 'aframe-physics-components';
 import 'aframe-physics-system';
 import 'aframe-particle-system-component';
 import 'a-mmd';
+import 'jquery';
 import React from 'react';
 import ReactDom from 'react-dom';
 import MainContainer from './Container/MainContainer.jsx';
