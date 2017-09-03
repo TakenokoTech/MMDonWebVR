@@ -4,7 +4,7 @@ import AssetsContainer from './AssetsContainer.jsx'
 import SceneContainer from './SceneContainer.jsx'
 import ConsoleContainer from './ConsoleContainer.jsx'
 import StageContainer from './StageContainer.jsx'
-import {BoxCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent, ObjCompornent} from '../Compornent/index.jsx';
+import {BoxCompornent, CarCompornent, SphereCompornent, TextCompornent, CursorCompornent, MmdCompornent, ObjCompornent, BaseEntity} from '../Compornent/index.jsx';
 
 export default class MainContainer extends Component {
 
@@ -24,10 +24,13 @@ export default class MainContainer extends Component {
         setInterval(() => {
             const rot = this.refs.cursorCompornent.getRotation();
             const rad = 1 - Math.cos(rot.y * (Math.PI / 180));
-            if( i++ % 1000 ) console.log();
-            this.refs.cursorCompornent.moveCamera( -rad*0.01, 0, -0.01)
-            //this.refs.ObjCompornent.moveRotation( 0, -rot.x/10, 0 )
-            this.refs.ObjCompornent.movePosition( -rad*0.01, 0, -0.01)
+            console.log(rot)
+            const a = 180 + rot.y - this.refs.carCompornent.rotation.y;
+            const speed = rot.x / 3;
+            this.refs.carCompornent.rotate( 0, a/10, 0);
+            this.refs.carCompornent.movesForward(speed);
+            const cam = this.refs.carCompornent.calcCamera();
+            this.refs.cursorCompornent.moveCamera( cam.x, cam.y, cam.z, true)            
         }, 100);
     }
 
@@ -49,8 +52,10 @@ export default class MainContainer extends Component {
                 <MmdCompornent />
                 <ConsoleContainer ref="consoleContainer" logText={this.state.logText} />
                 <CursorCompornent ref="cursorCompornent" position={this.state.position} />
-                <ObjCompornent ref="ObjCompornent" />
+                <CarCompornent ref="carCompornent" />
+                {/* <ObjCompornent ref="ObjCompornent" /> */}
                 {/* <StageContainer /> */}
+                <BaseEntity ref="baseEntity" />
             </Scene>
         );
     }

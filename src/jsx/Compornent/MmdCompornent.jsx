@@ -19,7 +19,7 @@ export default class MmdCompornent extends Component {
         const soundSource = {
             audio: "https://cdn.rawgit.com/mrdoob/three.js/dev/examples/models/mmd/audios/wavefile_short.mp3",
             autoplay: true,
-            volume: 0.1,
+            volume: 0,
             audioDelayTime: 5.333333333333333,
             afterglow: 2.0
         };
