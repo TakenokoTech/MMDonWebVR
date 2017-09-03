@@ -19,7 +19,7 @@ export default class MmdCompornent extends Component {
         const soundSource = {
             audio: "https://cdn.rawgit.com/mrdoob/three.js/dev/examples/models/mmd/audios/wavefile_short.mp3",
             autoplay: true,
-            volume: 0.1,
+            volume: 0,
             audioDelayTime: 5.333333333333333,
             afterglow: 2.0
         };
@@ -34,10 +34,10 @@ export default class MmdCompornent extends Component {
             mass:100,
             linearDamping: 0.01,
             angularDamping: 0.0001
-        };//dynamic-body={flatteningObj(dynamic)}
+        };
         return (
-            <Entity id={mmdId} {...design} mmd={flatteningObj(soundSource)}  >
-                <Entity id={modelId} mmd-model={flatteningObj(model)} />
+            <Entity id={mmdId} {...design} mmd={flatteningObj(soundSource)}>
+                <Entity id={modelId} mmd-model={flatteningObj(model)}/>
             </Entity>
         );
     }

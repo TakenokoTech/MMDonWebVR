@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Entity, Scene} from 'aframe-react';
+import Constants from '../Model/Constants';
 import {flatteningObj, Vector3} from '../Utils/Util.jsx';
 
 export default class SphereCompornent extends Component {
@@ -33,13 +34,8 @@ export default class SphereCompornent extends Component {
         const events = {
             click: this.props.click
         };
-        const dynamic = {
-            mass:100,
-            linearDamping: 0.01,
-            angularDamping: 0.0001
-        };
         return (
-            <Entity id={id} geometry={{primitive: 'sphere'}} {...design} {...animation} events={events} dynamic-body={flatteningObj(dynamic)} />
+            <Entity id={id} geometry={{primitive: 'sphere'}} {...design} {...animation} events={events} dynamic-body={Constants.DYNAMIC_BODY} />
         );
     }
 }
